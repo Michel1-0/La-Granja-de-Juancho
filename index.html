@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Granja de Juancho</title>
+    <style>
+        body {
+            background-image: url('./385304007_122106553664059383_2701563059104885116_n.jpg');
+            background-size: cover;
+            background-position: center center;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .contenido {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .opciones {
+            flex: 1;
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .precios {
+            flex: 1;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        .boton-inicio,
+        .boton-reservas {
+            background-color: #4caf50; /* Color verde */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .boton-inicio:hover,
+        .boton-reservas:hover {
+            background-color: #45a049;
+        }
+
+        .boton-volver {
+            background-color: #008CBA; /* Color azul */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .boton-volver:hover {
+            background-color: #0077a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenido">
+        <h1>Bienvenido a La Granja de Juancho</h1>
+        <p><b>¡Hola!</b> Estás en la página de recreo <b>La Granja de Juancho</b>.</p> 
+        <p>Disfruta de un día lleno de diversión y aventuras en nuestra granja.</p>
+    </div>
+    
+    <div class="opciones">
+        <!-- Botón de inicio -->
+        <button class="boton-inicio">Inicio</button>
+        <!-- Botón de reservas -->
+        <button class="boton-reservas" onclick="mostrarPrecios()">Reservar Entradas</button>
+    </div>
+
+    <!-- Sección de Precios -->
+    <div class="precios" style="display:none;" id="preciosSection">
+        <h2>Precios de Entrada</h2>
+        <p>Selecciona tu opción:</p>
+        <ul>
+            <li>Entrada General - S/ 5.00</li>
+            <li>Entrada con Asientos - S/ 10.00</li>
+            <li>Entrada con Acceso a la Piscina y Buena Vista - S/ 20.00</li>
+        </ul>
+        <!-- Botón para volver a la sección de opciones -->
+        <button class="boton-volver" onclick="volver()">Volver</button>
+    </div>
+
+    <script>
+        function mostrarPrecios() {
+            // Muestra la sección de precios y oculta la sección de opciones
+            document.getElementById('preciosSection').style.display = 'block';
+            document.getElementsByClassName('opciones')[0].style.display = 'none';
+        }
+
+        function volver() {
+            // Muestra la sección de opciones y oculta la sección de precios
+            document.getElementById('preciosSection').style.display = 'none';
+            document.getElementsByClassName('opciones')[0].style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
